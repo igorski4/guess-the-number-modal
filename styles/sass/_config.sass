@@ -1,0 +1,122 @@
+* 
+  box-sizing: border-box
+
+html
+  scroll-behavior: smooth
+  background: linear-gradient(360deg, #292E49 0%, #536976 100%)
+
+.container 
+  max-width: 600px
+  font-family: "Roboto", sans-serif
+
+.main
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  &__title
+    margin-bottom: 12px
+
+    font-style: normal
+    font-weight: 700
+    font-size: 36px
+    line-height: 42px
+    text-align: center
+    color: #FFFFFF
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
+
+  &__subtitle
+    margin-bottom: 48px
+
+    font-style: normal
+    font-weight: 400
+    font-size: 16px
+    line-height: 19px
+    text-align: center
+    color: #FFFFFF
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25)
+
+  &__wrapper
+    display: flex
+    gap: 12px
+    justify-content: center
+    margin-bottom: 48px
+
+  &__input
+    width: 127px
+    height: 48px
+
+    font-style: normal
+    font-weight: 400
+    font-size: 20px
+    line-height: 23px
+    text-align: center
+    color: #FFFFFF
+
+    background: rgba(41, 46, 73, 0.2)
+    border: 1px solid #292E49
+    border-radius: 8px
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button
+      -webkit-appearance: none
+    
+  &__button
+    width: 127px
+    height: 48px
+
+    font-style: normal
+    font-weight: 500
+    font-size: 18px
+    line-height: 21px
+    text-align: center
+    color: #FFFFFF
+
+    background: rgba(41, 46, 73, 0.6)
+    border: 1px solid #292E49
+    border-radius: 8px
+
+    &:hover
+      background: rgba(41, 46, 73, 0.8)
+    &:active
+      background: rgba(41, 46, 73, 0.6)
+      transform: scale(1.01)
+
+  &__hint
+    margin-bottom: 43px
+
+    font-style: normal
+    font-weight: 700
+    font-size: 28px
+    line-height: 33px
+    text-align: center
+    color: #FFFFFF
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25)
+
+  &__statistics
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    line-height: 16px
+    text-align: center
+    color: #FFFFFF
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25)
+  
+  &__modal
+    position: fixed
+    width: 50%
+    left: 25%
+    top: 170px
+    padding-top: 80px
+    padding-bottom: 80px
+    background: linear-gradient(360deg, #545e8d 0%, #7eaec7 100%)
+    border-radius: 5px
+    margin: 0 auto
+    visibility: hidden
+
+.modal
+  &__title
+    margin-bottom: 60px
+  &__wrapper
+    display: flex
+    justify-content: space-around
