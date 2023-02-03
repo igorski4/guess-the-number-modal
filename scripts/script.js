@@ -109,6 +109,9 @@ window.addEventListener("keydown", (event) => {
     if (event.code === "Escape") reset();
     else if (event.code === "Enter") confirm();
   } else {
+    if (event.key >= "0" && event.key <= "9") input.value += +event.key;
+    else if (event.key === "Backspace")
+      input.value = input.value.slice(0, input.value.length - 1);
     if (event.code === "Enter") {
       if (document.querySelector(".main__button").innerHTML === "Угадать")
         checkNumber();
