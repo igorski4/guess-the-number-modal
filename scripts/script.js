@@ -120,8 +120,10 @@ window.addEventListener("keydown", (event) => {
       !(input === document.activeElement)
     )
       input.value += +event.key;
-    else if (event.key === "Backspace")
-      input.value = input.value.slice(0, input.value.length - 1);
+    else if (event.key === "Backspace") {
+      input.value = "";
+      document.querySelector(".main__hint").innerHTML = "—";
+    }
     if (event.code === "Enter") {
       if (document.querySelector(".main__button").innerHTML === "Угадать")
         checkNumber();
