@@ -40,7 +40,7 @@ const addButton = () => {
 };
 
 const checkNumber = () => {
-  if (input.value !== "") {
+  if (input.value >= 1 && input.value <= 100) {
     modal.style.visibility = "visible";
     document.body.style.overflow = "hidden";
 
@@ -49,9 +49,14 @@ const checkNumber = () => {
       event.stopPropagation();
     });
   } else {
+    if (input.value) {
+      input.value = "";
+      document.querySelector(".main__hint").innerHTML =
+        "Число не входит в диапазон!";
+    } else document.querySelector(".main__hint").innerHTML = "Введите число!";
     input.style.borderColor = "red";
     setTimeout(() => (input.style.borderColor = "#292E49"), 400);
-    document.querySelector(".main__hint").innerHTML = "Введите число!";
+    countStep++;
   }
 };
 
@@ -90,7 +95,7 @@ const resetForm = () => {
   hint.innerHTML = "—";
 };
 
-button.addEventListener("click", () => checkNumber);
+button.addEventListener("click", checkNumber);
 
 newButton.addEventListener("click", resetForm);
 
@@ -109,7 +114,12 @@ window.addEventListener("keydown", (event) => {
     if (event.code === "Escape") reset();
     else if (event.code === "Enter") confirm();
   } else {
-    if (event.key >= "0" && event.key <= "9") input.value += +event.key;
+    if (
+      event.key >= "0" &&
+      event.key <= "9" &&
+      !(input === document.activeElement)
+    )
+      input.value += +event.key;
     else if (event.key === "Backspace")
       input.value = input.value.slice(0, input.value.length - 1);
     if (event.code === "Enter") {

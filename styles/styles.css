@@ -196,6 +196,9 @@ html {
 .main__input::-webkit-outer-spin-button, .main__input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+.main__input::-moz-outer-spin-button, .main__input::-moz-inner-spin-button {
+  -moz-appearance: none;
+}
 .main__button {
   width: 127px;
   height: 48px;
